@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": -262.2, "left": -314, "attrs": {} },
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": -259.2,
+      "left": -494.36,
+      "attrs": { "env": "micropython-20231227-v1.22.0" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -234,
+      "left": -245.8,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -234,
+      "left": -207.4,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -234,
+      "left": -92.2,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led4",
+      "top": -234,
+      "left": -130.6,
+      "attrs": { "color": "limegreen" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led5",
+      "top": -234,
+      "left": -169,
+      "attrs": { "color": "orange" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "led1:C", "bb1:6t.c", "black", [ "v0" ] ],
+    [ "led2:C", "bb1:10t.c", "black", [ "v0" ] ],
+    [ "led5:C", "bb1:14t.c", "black", [ "v0" ] ],
+    [ "led4:C", "bb1:18t.c", "black", [ "v0" ] ],
+    [ "led3:C", "bb1:22t.c", "black", [ "v0" ] ],
+    [ "bb1:6t.e", "bb1:10t.e", "black", [ "v19.2", "h38.4", "v-9.6" ] ],
+    [ "bb1:10t.e", "bb1:14t.e", "black", [ "v19.2", "h38.4" ] ],
+    [ "bb1:14t.e", "bb1:18t.e", "black", [ "v19.2", "h38.4" ] ],
+    [ "bb1:18t.e", "bb1:22t.e", "black", [ "v19.2", "h38.4" ] ],
+    [ "bb1:6t.a", "bb1:tn.5", "black", [ "v0" ] ],
+    [ "esp:GND.3", "bb1:tn.1", "black", [ "h67.2", "v-67.2" ] ],
+    [ "esp:19", "bb1:8t.e", "gray", [ "h172.8" ] ],
+    [ "esp:18", "bb1:12t.e", "blue", [ "h0" ] ],
+    [ "esp:17", "bb1:16t.e", "orange", [ "h0" ] ],
+    [ "esp:16", "bb1:20t.e", "red", [ "h0" ] ],
+    [ "esp:15", "bb1:24t.e", "#8f4814", [ "v0", "h76.8" ] ],
+    [ "led1:A", "bb1:8t.c", "", [ "$bb" ] ],
+    [ "led1:C", "bb1:7t.c", "", [ "$bb" ] ],
+    [ "led2:A", "bb1:12t.c", "", [ "$bb" ] ],
+    [ "led2:C", "bb1:11t.c", "", [ "$bb" ] ],
+    [ "led4:A", "bb1:20t.c", "", [ "$bb" ] ],
+    [ "led4:C", "bb1:19t.c", "", [ "$bb" ] ],
+    [ "led5:A", "bb1:16t.c", "", [ "$bb" ] ],
+    [ "led5:C", "bb1:15t.c", "", [ "$bb" ] ],
+    [ "led3:A", "bb1:24t.c", "", [ "$bb" ] ],
+    [ "led3:C", "bb1:23t.c", "", [ "$bb" ] ]
+  ],
+  "dependencies": {}
+}
