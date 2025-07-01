@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "author": "Seyed Milad Hashemi Chepi",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 57.6,
+      "left": 72.04,
+      "attrs": { "env": "micropython-20231227-v1.22.0" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 34.8,
+      "left": 263,
+      "attrs": { "color": "limegreen" }
+    },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir1", "top": -24.8, "left": -55.38, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "led1:A", "esp:23", "red", [ "v0" ] ],
+    [ "led1:C", "esp:GND.2", "black", [ "v0" ] ],
+    [ "pir1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "pir1:VCC", "esp:5V", "red", [ "v0" ] ],
+    [ "pir1:OUT", "esp:25", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
